@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-export const BandList = ({ data, votar, borrarBanda }) => {
+export const BandList = ({ data, votar, borrarBanda, cambiarNombre }) => {
   const [bands, setBands] = useState(data);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export const BandList = ({ data, votar, borrarBanda }) => {
 
   const onPerdioFoco = (id, nombre) => {
     console.log(id, nombre);
-    // TODO: Disparar el evento de socket
+    cambiarNombre(id, nombre);
   };
 
   const crearRows = () => {
